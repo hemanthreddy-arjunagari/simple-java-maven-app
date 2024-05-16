@@ -60,7 +60,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.8.6,)</version>
+                  <version>[3.6.3,)</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
                   <version>[11,)</version>
@@ -69,6 +69,24 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>7.0.4</version>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>aggregate</goal>
+                </goals>
+            </execution>
+        </executions>
+        <configuration>
+            <formats>
+                <format>json</format>
+                <format>html</format>
+            </formats>
+        </configuration>
       </plugin>
     </plugins>
   </build>
